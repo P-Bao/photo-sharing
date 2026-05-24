@@ -15,6 +15,8 @@ dbConnect();
 
 const imagesDirectory = path.join(__dirname, "images");
 
+app.set("trust proxy", 1);
+
 app.use(
   cors({
     origin: true,
@@ -31,8 +33,9 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      sameSite: "lax",
-      maxAge: 60 * 60,
+      sameSite: "none",
+      secure: true,
+      maxAge: 60 * 60 * 1000,
     },
   })
 );
