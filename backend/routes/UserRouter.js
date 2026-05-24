@@ -26,7 +26,7 @@ router.post("/", async (request, response) => {
       }
     }
 
-    const existingUser = await User.findOne(login_name);
+    const existingUser = await User.findOne({ login_name: login_name.trim() });
     if (existingUser) {
       return response
         .status(400)
