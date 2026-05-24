@@ -2,6 +2,13 @@ const express = require("express");
 const User = require("../db/userModel");
 const router = express.Router();
 
+router.get("/current", (request, response) => {
+  if (!request.session.user) {
+    return response.status(401).send("Unauthorized");
+  }
+  return response.status(200).send(request.session.user);
+});
+
 router.post("/login", async (request, response) => {
   try {
     const { login_name, password } = request.body;
