@@ -12,7 +12,7 @@ router.post("/:photo_id", async (request, response) => {
         .send({ message: "comment must be a non-empty string." });
     }
 
-    const photo = await Photo.findOne(request.params.photo_id);
+    const photo = await Photo.findById(request.params.photo_id);
     if (!photo) {
       return response.status(400).send({ message: "Photo not found." });
     }
@@ -25,7 +25,7 @@ router.post("/:photo_id", async (request, response) => {
     photo.comments.push(new_comment);
     await photo.save();
 
-    return response.status(200).send({ message: "Commend added." });
+    return response.status(200).send({ message: "Comment added." });
   } catch (err) {
     return response
       .status(500)
