@@ -1,0 +1,110 @@
+.topbar-appBar {
+  min-height: 64px;
+  justify-content: center;
+  background-color: #1976d2 !important;
+}
+
+.topbar-toolBar {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 24px;
+  gap: 20px;
+}
+
+.topbar-author {
+  font-weight: bold;
+  color: white;
+  flex: 0 0 auto;
+}
+
+.topbar-title {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ffffff;
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 0;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-width: 260px;
+}
+
+.topbar-greeting {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.topbar-upload-button {
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.topbar-upload-button:hover {
+  background-color: #1b5e20 !important;
+}
+
+.topbar-logout-button {
+  background-color: #ffffff !important;
+  color: #1976d2 !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.topbar-logout-button:hover {
+  background-color: #e3f2fd !important;
+}
+
+.topbar-status {
+  position: absolute;
+  right: 24px;
+  bottom: 4px;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar-error {
+  color: #fecaca;
+}
+
+.topbar-message {
+  color: #bbf7d0;
+}
+
+@media (max-width: 720px) {
+  .topbar-toolBar {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .topbar-author,
+  .topbar-title,
+  .topbar-actions {
+    flex: 1 1 100%;
+    min-width: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .topbar-status {
+    position: static;
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
